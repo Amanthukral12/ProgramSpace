@@ -17,7 +17,7 @@ function App() {
            <span>Get top posts from the best developer platforms</span>
          </div>
        </div>
-       <div>
+       <div className='md:w-1/2 bg-gray-100 overflow-y-scroll max-h-screen'>
           <Switch>
             <Route exact path="/" component={Hashnode} />
             <Route exact path="/github" component={Github} />
