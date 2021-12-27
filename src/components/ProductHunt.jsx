@@ -1,5 +1,7 @@
 import {useState, useEffect} from 'react'
 import { ReactComponent as ThreeDots } from '../assets/svgs/threedots.svg'
+import productIcon from '../assets/images/producthunt.png'
+import Header from './Header'
 const ProductHunt = () => {
     const [productList, setProductList] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -46,6 +48,11 @@ const ProductHunt = () => {
     }, [])
     return (
         <div>
+            <Header 
+                icon={productIcon}
+                title='Product Hunt'
+                borderColor='border-red-300'
+                />
             {
                 (isLoading === true) ?
                     <div>

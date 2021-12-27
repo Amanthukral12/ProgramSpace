@@ -1,5 +1,7 @@
 import {useState, useEffect} from 'react'
 import { ReactComponent as ThreeDots } from '../assets/svgs/threedots.svg'
+import Header from './Header';
+import HashnodeIcon from '../assets/images/hashnode.png'
 const query = `{
     storiesFeed(type: BEST){
         title,
@@ -34,6 +36,11 @@ const Hashnode = () => {
     },[])
     return (
         <div>
+            <Header 
+                icon={HashnodeIcon}
+                title='Hashnode'
+                borderColor='border-blue-400'
+                />
             {
                 (isLoading === true) ? 
                 <div className='flex justify-center my-48 text-7xl'>

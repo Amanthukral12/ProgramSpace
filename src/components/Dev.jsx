@@ -1,5 +1,7 @@
 import {useState, useEffect} from 'react'
 import { ReactComponent as ThreeDots } from '../assets/svgs/threedots.svg'
+import Header from './Header';
+import DevIcon from '../assets/images/dev.webp'
 const Dev = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [feedPost, setFeedPost] = useState([]);
@@ -19,6 +21,11 @@ const Dev = () => {
     },[]);
     return (
         <div>
+            <Header 
+                icon={DevIcon}
+                title='Dev.to'
+                borderColor='border-gray-400'
+                />
             {
                 (isLoading === true) ? 
                     <div>

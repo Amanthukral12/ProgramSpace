@@ -1,6 +1,8 @@
 import {useState, useEffect} from 'react'
 import { ReactComponent as ThreeDots } from '../assets/svgs/threedots.svg'
 import StoryCard from './StoryCard'
+import Header from './Header'
+import HackerNewsIcon from '../assets/images/hackernews.png'
 const HackerNews = () => {
     const [news, setNews] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -19,6 +21,11 @@ const HackerNews = () => {
     },[])
     return (
         <div>
+            <Header 
+                icon={HackerNewsIcon}
+                title='Hackernews'
+                borderColor='border-yellow-400'
+                />
            {
            (isLoading === true) ? 
            <div>

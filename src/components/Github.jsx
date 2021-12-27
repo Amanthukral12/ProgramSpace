@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { ReactComponent as ThreeDots } from '../assets/svgs/threedots.svg'
+import githubIcon from '../assets/images/github.png'
+import Header from './Header';
 const Github = () => {
     const [repoList, setRepoList] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -15,6 +17,11 @@ const Github = () => {
     }, [])
     return (
         <div>
+            <Header 
+                icon={githubIcon}
+                title='Github'
+                borderColor='border-purple-400'
+                />
             {
                 (isLoading === true) ? 
                 <div className='flex justify-center my-48 text-7xl'>
