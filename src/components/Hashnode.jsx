@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react'
 import { ReactComponent as ThreeDots } from '../assets/svgs/threedots.svg'
 import Header from './Header';
 import HashnodeIcon from '../assets/images/hashnode.png'
+import Fade from 'react-reveal/Fade';
 const query = `{
     storiesFeed(type: BEST){
         title,
@@ -9,6 +10,7 @@ const query = `{
                 username,
                 blogHandle,
                 publicationDomain,
+                name
         },
         coverImage,
         responseCount,
@@ -47,17 +49,19 @@ const Hashnode = () => {
                    <ThreeDots fill="#8B5CF6" />
                 </div>
                 :
-                <div>
+                <div className="flex flex-row flex-wrap justify-center p-2">
                 {feedPost.map(post => {
                     return (
-                        <div key={post.cuid}>
-                            <a href={`https://${post.author.publicationDomain === '' ? post.author.blogHandle + '.hashnode.dev/': post.author.publicationDomain + '/'}${post.slug}`}>
-                                <img src={post.coverImage} alt="" />
-                                <span>{post.title}</span>
-                                <div>{post.author.blogHandle}</div>
-                                <div>{post.dateFeatured}</div>
+                        <Fade bottom key={post.cuid}>
+                            <a href={`https://${post.author.publicationDomain === '' ? post.author.blogHandle + '.hashnode.dev/': post.author.publicationDomain + '/'}${post.slug}`}
+                             target="_blank" rel="noreferrer" >
+                                 <div className='w-72 h-auto py-auto shadow flex flex-col bg-white rounded-md p-4 text-left m-2'>
+                                <img src={post.coverImage === '' ? 'https://picsum.photos/seed/picsum/200/150' : post.coverImage} alt="cover-image" className='rounded h-36' />
+                                <h3 className='text-md font-medium mt-2'>{post.title}</h3>
+                                <div className='text-sm font-semibold mt-2'>{post.author.name}</div>
+                                </div>
                             </a>
-                        </div>
+                        </Fade>
                     )
                 })}
                 </div>
