@@ -28,11 +28,11 @@ const HackerNews = () => {
                 />
            {
            (isLoading === true) ? 
-           <div>
-               <ThreeDots />
+           <div className='flex justify-center my-48 text-7xl'>
+               <ThreeDots fill="#8B5CF6" />
            </div>
            :
-           <div>
+           <div className='flex flex-col p-2 justify-center'>
                {news.slice(0,20).map(newsId => {
                    return (<StoryCard id = {newsId} key={newsId} />)
                })}

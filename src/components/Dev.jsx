@@ -29,8 +29,8 @@ const Dev = () => {
                 />
             {
                 (isLoading === true) ? 
-                    <div>
-                        <ThreeDots />
+                    <div className='flex justify-center my-48 text-7xl'>
+                        <ThreeDots fill="#8B5CF6" />
                     </div>
                     :
                     <div className='flex flex-row flex-wrap justify-center p-2'>

@@ -1,4 +1,5 @@
 import {useState, useEffect} from 'react'
+import Fade from 'react-reveal/Fade';
 const StoryCard = ({id}) => {
     const [storyDetails, setStoryDetails] = useState({})
     const getDetails = async (id) => {
@@ -14,12 +15,13 @@ const StoryCard = ({id}) => {
         getDetails(id);
     },[])
     return (
-        
-        <div>
+        <Fade bottom key={storyDetails.id}>
+        <div className='bg-white px-4 shadow rounded p-3 text-xl text-left m-1 border-l-4 text-gray-700'>
             <a href={storyDetails.url}>
                 <h2>{storyDetails.title}</h2>
             </a>
         </div>
+        </Fade>
     )
 }
 
