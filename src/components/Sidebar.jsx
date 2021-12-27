@@ -6,39 +6,39 @@ import producthuntIcon from '../assets/images/producthunt.png';
 import githubIcon from '../assets/images/github.png';
 const Sidebar = () => {
     return (
-        <div>
+        <div className="flex flex-row flex-wrap justify-center md:px-20">
            <Link to="/" >
-                <div>
-                    <img src={hashnodeIcon} alt="logo" />
-                    <p>Hashnode</p>
+                <div className="shadow-md h-28 w-32 transform hover:scale-110 duration-100 bg-white p-4 m-2 flex-col rounded-lg text-center">
+                    <img src={hashnodeIcon} alt="logo" className="h-12 w-12 mx-auto" />
+                    <p className="text-xl font-semibold mt-2">Hashnode</p>
                 </div>   
             </Link>
 
             <Link to="/dev" >
-                <div>
-                    <img src={devIcon} alt="logo" />
-                    <p>Dev.to</p>
+                <div className="shadow-md h-28 w-32 transform hover:scale-110 duration-100 bg-white p-4 m-2 flex-col rounded-lg text-center">
+                    <img src={devIcon} alt="logo" className="h-12 w-12 mx-auto" />
+                    <p className="text-xl font-semibold mt-2">Dev.to</p>
                 </div>   
             </Link>
             
             <Link to="/hackernews" >
-                <div>
-                    <img src={hackernewsIcon} alt="logo" />
-                    <p>HackerNews</p>
+                <div className="shadow-md h-28 transform hover:scale-110 duration-100 bg-white p-4 m-2 flex-col rounded-lg text-center">
+                    <img src={hackernewsIcon} alt="logo" className="h-12 w-12 mx-auto" />
+                    <p className="text-xl font-semibold mt-2">HackerNews</p>
                 </div>   
             </Link>
 
             <Link to="/producthunt" >
-                <div>
-                    <img src={producthuntIcon} alt="logo" />
-                    <p>Product Hunt</p>
+                <div className="shadow-md h-28 transform hover:scale-110 duration-100 bg-white p-4 m-2 flex-col rounded-lg text-center">
+                    <img src={producthuntIcon} alt="logo" className="h-12 w-12 mx-auto" />
+                    <p className="text-xl font-semibold mt-2">Product Hunt</p>
                 </div>   
             </Link>
 
             <Link to="/github" >
-                <div>
-                    <img src={githubIcon} alt="logo" />
-                    <p>Github</p>
+                <div className="shadow-md h-28 w-32 transform hover:scale-110 duration-100 bg-white p-4 m-2 flex-col rounded-lg text-center">
+                    <img src={githubIcon} alt="logo" className="h-12 w-12 mx-auto" />
+                    <p className="text-xl font-semibold mt-2">Github</p>
                 </div>   
             </Link>  
         </div>
