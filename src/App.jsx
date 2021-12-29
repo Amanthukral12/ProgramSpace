@@ -11,7 +11,7 @@ function App() {
     <div className="text-center mx-auto">
      <BrowserRouter>
        <div className="flex md:flex-row flex-col">
-       <div className='bg-purple-500 md:w-1/2 md:h-screen h-full py-20'>
+       <div className='bg-purple-500 md:w-1/2 md:min-h-screen h-full py-2 xl:py-20'>
          <div className='m-8'>
            <h1 className='text-4xl font-bold text-white'>ProgramSpace</h1>
            <span className='text-white italic font-semibold'>Get top posts from the best developer platforms</span>
