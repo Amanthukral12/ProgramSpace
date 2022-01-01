@@ -9,28 +9,28 @@ const ProductHunt = () => {
     const [isLoading, setIsLoading] = useState(true);
     const query = `{
         posts() {
-            edges {
-                cursor,
-                node {
-                    id,
-                    description,
-                    tagline,
-                    url,
-                    votesCount,
-                    name,
-                    thumbnail {
-                        type,
+            edges{
+                cursor
+                node{
+                    id
+                    name
+                    tagline
+                    description
+                    url
+                    votesCount
+                    thumbnail{
+                        type
                         url
                     }
                 }
             }
         }
-    }`
+    }`;
     const opts = {
         headers : {
             Authorization : `Bearer ${import.meta.env.VITE_KEY}`,
             Accept: 'application/json',
-            'Content-type': 'application/json',
+            'Content-Type': 'application/json',
     
             
         },
