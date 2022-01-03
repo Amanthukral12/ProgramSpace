@@ -7,6 +7,7 @@ import upvoteIcon from '../assets/svgs/upvote.svg'
 const ProductHunt = () => {
     const [productList, setProductList] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const KEY='KU-B8gP589pQv4CBAyKFi_viJ_P3kC55rVlxvnl_wyM'
     const query = `{
         posts() {
             edges{
@@ -26,23 +27,29 @@ const ProductHunt = () => {
             }
         }
     }`;
-    const opts = {
-        headers : {
-            Authorization : `Bearer ${import.meta.env.VITE_KEY}`,
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
     
-            
-        },
-        method: 'POST',
-        mode: "cors",
-        body: JSON.stringify({ query })
-    }
     const getProductList = async () => {
-        const response = await fetch('https://api.producthunt.com/v2/api/graphql', opts)
+        const options = {
+            headers : {
+                Authorization : `Bearer ${KEY}`,
+                Accept: 'application/json',
+                'Content-Type': 'application/json',
+        
+                
+            },
+            method: 'POST',
+            mode: "cors",
+            body: JSON.stringify({ query })
+        }
+        try {
+            const response = await fetch(`https://api.producthunt.com/v2/api/graphql`, options)
         const trendingList = await response.json();
         setIsLoading(false);
         setProductList(trendingList.data.posts.edges);
+        } catch (e) {
+            alert('Oops! we got a temperory problem, Try after some time.')
+        }
+        
     }
 
     useEffect(() => {
