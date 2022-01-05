@@ -1,7 +1,9 @@
-# 🚀 Programspace
+# Programspace
 
 Get top posts form the best developer platforms.
 Shows top posts from Hashnode, dev, Hackernews, Producthunt, Github.
+
+![ProgramSpace](https://user-images.githubusercontent.com/47064923/148267546-a10e76a5-5a7e-4255-ba42-401775dd07f0.jpg)
 
 Built with React, Vite and TailwindCSS
 
