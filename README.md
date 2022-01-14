@@ -9,8 +9,9 @@ Built with React, Vite and TailwindCSS
 
 ```shell
 git clone https://github.com/Amanthukral12/ProgramSpace.git
-cd devspace/
-npm start
+cd programspace/
+npm install
+npm run dev
 ```
 
 ## 👇 Contributing
